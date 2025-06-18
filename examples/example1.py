@@ -22,8 +22,8 @@ except Exception as e:
 # Accessing Inference V3 endpoints
 try:
     chat_request_data = {
-        "user_id": "harshit@lyzr.ai",
-        "agent_id": "68396a29c446a3a00dfee888", # Replace with actual agent ID
+        "user_id": "demo@example.com",
+        "agent_id": "68396a2dfee888", # Replace with actual agent ID
         "session_id": "asd", # Optional
         "message": "Hello! whats your role?"
     }
