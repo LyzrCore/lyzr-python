@@ -1,7 +1,4 @@
-# lyzr_agent_api/clients/agents_v3.py
-import requests
-import json
-from ..base import LyzrBaseClient
+from lyzr_python.base import LyzrBaseClient
 
 
 class LyzrAgent(LyzrBaseClient):
@@ -11,7 +8,7 @@ class LyzrAgent(LyzrBaseClient):
     def __init__(self, base_url: str, api_key: str):
         super().__init__(base_url, api_key)
 
-    def get_agents_by_api_key(self):
+    def get_agents(self):
         """
         Get all agents by API key.
 

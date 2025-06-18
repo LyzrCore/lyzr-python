@@ -1,6 +1,3 @@
-# lyzr_agent_api/clients/tools_v3.py
-import requests
-import json
 from ..base import LyzrBaseClient
 
 
@@ -11,7 +8,7 @@ class LyzrTools(LyzrBaseClient):
     def __init__(self, base_url: str, api_key: str):
         super().__init__(base_url, api_key)
 
-    def get_user_tools(self):
+    def get_tools(self):
         """
         Get All Tools For An User
 
@@ -21,7 +18,7 @@ class LyzrTools(LyzrBaseClient):
         endpoint = "/v3/tools/"
         return self._request("GET", endpoint)
 
-    def create_openapi_tool(self, tool_data: dict):
+    def create_tool(self, tool_data: dict):
         """
         Create a new tool from an OpenAPI schema with custom name and default parameters.
 
@@ -42,7 +39,7 @@ class LyzrTools(LyzrBaseClient):
         endpoint = "/v3/tools/"
         return self._request("POST", endpoint, json=tool_data)
 
-    def get_openapi_tool_info(self, tool_id: str):
+    def get_tool_info(self, tool_id: str):
         """
         Get information about an OpenAPI tool.
 
@@ -55,7 +52,7 @@ class LyzrTools(LyzrBaseClient):
         endpoint = f"/v3/tools/openapi/{tool_id}"
         return self._request("GET", endpoint)
 
-    def execute_openapi_tool(self, tool_id: str, path: str, method: str, params: dict = None):
+    def execute_tool(self, tool_id: str, path: str, method: str, params: dict = None):
         """
         Execute an OpenAPI tool with the given parameters.
 

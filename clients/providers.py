@@ -1,6 +1,3 @@
-# lyzr_agent_api/clients/providers_v3.py
-import requests
-import json
 from ..base import LyzrBaseClient
 
 
@@ -37,7 +34,7 @@ class LyzrProviders(LyzrBaseClient):
         endpoint = "/v3/providers/lyzr"
         return self._request("POST", endpoint, json=provider_body)
 
-    def get_all_providers(self, provider_type: str):
+    def get_providers(self, provider_type: str):
         """
         Get all providers associated with a specific API key and provider type.
 
@@ -51,7 +48,7 @@ class LyzrProviders(LyzrBaseClient):
         params = {"provider_type": provider_type}
         return self._request("GET", endpoint, params=params)
 
-    def get_provider_by_provider_id(self, provider_id: str):
+    def get_provider(self, provider_id: str):
         """
         Get provider associated with a specific provider ID.
 
@@ -196,7 +193,7 @@ class LyzrProviders(LyzrBaseClient):
         endpoint = f"/v3/providers/credentials/{credential_id}"
         return self._request("DELETE", endpoint)
 
-    def get_all_credentials_by_user_and_type_and_id(self, provider_type: str, provider_id: str):
+    def get_all_credentials(self, provider_type: str, provider_id: str):
         """
         Get all provider credentials by user and provider type and provider Id.
 

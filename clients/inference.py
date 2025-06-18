@@ -1,6 +1,4 @@
-# lyzr_agent_api/clients/inference_v3.py
 import requests
-import json
 from ..base import LyzrBaseClient
 
 
@@ -11,7 +9,7 @@ class LyzrInference(LyzrBaseClient):
     def __init__(self, base_url: str, api_key: str):
         super().__init__(base_url, api_key)
 
-    def chat_with_agent(self, chat_request: dict):
+    def chat(self, chat_request: dict):
         """
         Chat with an agent.
 
@@ -31,7 +29,7 @@ class LyzrInference(LyzrBaseClient):
         endpoint = "/v3/inference/chat/"
         return self._request("POST", endpoint, json=chat_request)
 
-    def generate_response(self, agent_id: str, request_body: dict):
+    def get_response(self, agent_id: str, request_body: dict):
         """
         Generate Response Endpoint
 
@@ -49,7 +47,7 @@ class LyzrInference(LyzrBaseClient):
         endpoint = f"/v3/inference/{agent_id}/generate_response/"
         return self._request("POST", endpoint, json=request_body)
 
-    def create_chat_task(self, chat_request: dict):
+    def task(self, chat_request: dict):
         """
         Create Chat Task
 
@@ -69,7 +67,7 @@ class LyzrInference(LyzrBaseClient):
         endpoint = "/v3/inference/task/"
         return self._request("POST", endpoint, json=chat_request)
 
-    def get_task_status(self, task_id: str):
+    def task_status(self, task_id: str):
         """
         Get Task Status
 
@@ -93,7 +91,7 @@ class LyzrInference(LyzrBaseClient):
         endpoint = f"/v3/inference/task/{task_id}"
         return self._request("GET", endpoint)
 
-    def stream_chat_with_agent(self, chat_request: dict):
+    def stream_chat(self, chat_request: dict):
         """
         Stream chat with an agent.
 
