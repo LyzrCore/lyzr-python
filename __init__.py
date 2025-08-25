@@ -1,3 +1,5 @@
+__version__ = "0.1.5"
+
 from .base import LyzrBaseClient
 from .clients import (
     LyzrAgent,
@@ -31,4 +33,4 @@ class LyzrAgentAPI(LyzrBaseClient):
 
 
 # Optional: Expose the main client class for direct import
-__all__ = ["LyzrAgentAPI"]
+__all__ = ["LyzrAgentAPI", "__version__"]

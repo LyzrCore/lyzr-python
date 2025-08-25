@@ -1,4 +1,4 @@
-from lyzr_python import LyzrAgentAPI
+from lyzr_python_sdk import LyzrAgentAPI
 
 # Replace with your actual API key
 # Optional, defaults to this

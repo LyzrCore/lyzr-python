@@ -1,4 +1,4 @@
-from lyzr_python.base import LyzrBaseClient
+from ..base import LyzrBaseClient
 
 
 class LyzrAgent(LyzrBaseClient):
